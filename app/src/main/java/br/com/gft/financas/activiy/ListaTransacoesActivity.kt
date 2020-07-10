@@ -1,8 +1,10 @@
-package br.com.gft.financas
+package br.com.gft.financas.activiy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import br.com.gft.financas.R
+import br.com.gft.financas.adapter.ListaTransacoesAdapter
 import kotlinx.android.synthetic.main.activity_lista_transacoes.*
 
 class ListaTransacoesActivity : AppCompatActivity() {
@@ -13,9 +15,9 @@ class ListaTransacoesActivity : AppCompatActivity() {
 
         val transacoes = listOf("Comida - R$30,50", "Economia - R$100,00")
 
-        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, transacoes)
+        //val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, transacoes)
 
-        lista_transacoes_listview.adapter = arrayAdapter
+        lista_transacoes_listview.adapter = ListaTransacoesAdapter(transacoes, this)
 
         // = findViewById<ListView>(R.id.lista_transacoes_listview)
 
