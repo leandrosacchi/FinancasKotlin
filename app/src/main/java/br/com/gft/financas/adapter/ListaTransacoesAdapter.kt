@@ -8,6 +8,7 @@ import android.widget.BaseAdapter
 import br.com.gft.financas.R
 import br.com.gft.financas.model.Transacao
 import kotlinx.android.synthetic.main.transacao_item.view.*
+import java.text.SimpleDateFormat
 
 class ListaTransacoesAdapter(
     transacoes: List<Transacao>,
@@ -21,9 +22,12 @@ class ListaTransacoesAdapter(
         val viewCriada: View = LayoutInflater.from(context).inflate(R.layout.transacao_item, parent, false)
         val transacao = transacoes[posicao]
 
-        viewCriada.transacao_valor.setText(transacao.valor.toString())
-        viewCriada.transacao_data
-        viewCriada.transacao_categoria
+        viewCriada.transacao_valor.text = transacao.valor.toString()
+        viewCriada.transacao_categoria.text = transacao.categoria
+
+        val sdf = SimpleDateFormat("dd/MM/yyyy")
+        val dataFormatada = sdf.format(transacao.data.time)
+        viewCriada.transacao_data.text = dataFormatada
 
         return viewCriada
     }

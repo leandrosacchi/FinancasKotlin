@@ -5,4 +5,4 @@ import java.util.*
 
 class Transacao (val valor: BigDecimal,
                  val categoria: String,
-                 val data: Calendar)    
+                 val data: Calendar)
